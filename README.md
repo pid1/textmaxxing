@@ -60,3 +60,7 @@ uv run uvicorn main:app --reload
 # Run directly
 uv run python main.py
 ```
+
+## Production Deployment
+
+I recommend deployment via [Railway](https://railway.com?referralCode=amd527).
