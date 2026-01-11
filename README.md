@@ -1,6 +1,6 @@
 # textmaxxing
 
-> Your SMS grindset coach. Claude on speed dial. Touch grass optional.
+Your SMS grindset coach. Claude on speed dial. Touching grass optional.
 
 A FastAPI application that lets you have SMS conversations with Claude using Twilio.
 
