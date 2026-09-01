@@ -49,6 +49,7 @@ ngrok http 8000
 Text your Twilio phone number and Claude will respond!
 
 **Special commands:**
+
 - `reset`, `clear`, or `new chat` - Clear conversation history
 
 ## Development

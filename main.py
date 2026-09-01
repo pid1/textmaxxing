@@ -54,7 +54,9 @@ async def handle_sms(
     # Check allowlist
     allowed = os.getenv("ALLOWED_PHONE_NUMBER")
     if allowed and sender != allowed:
-        logger.warning(f"Rejected SMS from {sender} - not in allowlist (allowed: {allowed})")
+        logger.warning(
+            f"Rejected SMS from {sender} - not in allowlist (allowed: {allowed})"
+        )
         return Response(status_code=204)  # Silent ignore
 
     # Special command to clear conversation history
@@ -82,7 +84,9 @@ async def handle_sms(
         logger.info(f"Assistant message: {assistant_message}")
 
         # Add assistant response to conversation history
-        conversations[sender].append({"role": "assistant", "content": assistant_message})
+        conversations[sender].append(
+            {"role": "assistant", "content": assistant_message}
+        )
 
         # Keep conversation history manageable (last 20 messages)
         if len(conversations[sender]) > 20:
