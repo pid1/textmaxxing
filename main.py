@@ -49,13 +49,13 @@ async def handle_sms(
     """
     incoming_message = Body.strip()
     sender = From
-    logger.info(f"Received SMS from {sender}: {incoming_message}")
+    logger.info("Received SMS from %r: %r", sender, incoming_message)
 
     # Check allowlist
     allowed = os.getenv("ALLOWED_PHONE_NUMBER")
     if allowed and sender != allowed:
         logger.warning(
-            f"Rejected SMS from {sender} - not in allowlist (allowed: {allowed})"
+            "Rejected SMS from %r - not in allowlist (allowed: %r)", sender, allowed
         )
         return Response(status_code=204)  # Silent ignore
 
@@ -78,10 +78,10 @@ async def handle_sms(
             system=SYSTEM_PROMPT,
             messages=conversations[sender],
         )
-        logger.info(f"Claude response: {claude_response}")
+        logger.info("Claude response: %r", claude_response)
 
         assistant_message = claude_response.content[0].text
-        logger.info(f"Assistant message: {assistant_message}")
+        logger.info("Assistant message: %r", assistant_message)
 
         # Add assistant response to conversation history
         conversations[sender].append(
