@@ -16,3 +16,8 @@ dependencies = [
 [tool.uv]
 # Supply-chain cooldown: only resolve releases at least 7 days old.
 exclude-newer = "7 days"
+# Cooldown exception (factory 2026-10-22): certifi 2026.10.19 removes the
+# distrusted "emSign ECC Root CA - G3" (Semgrep ssc-5df0a6b6-da47-4290-9f7c-28111c57478b).
+# Remove this exemption on the next factory run.
+exclude-newer-package = { certifi = false }
+constraint-dependencies = ["certifi>=2026.10.19"]
