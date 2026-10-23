@@ -12,3 +12,13 @@ dependencies = [
     "twilio>=9.12.0",
     "uvicorn>=0.54.0",
 ]
+
+[tool.uv]
+exclude-newer = "7 days"
+
+[tool.uv.exclude-newer-package]
+certifi = "2026-10-20T02:25:00Z"
+fastapi = "2026-10-19T12:27:00Z"
+httpcore2 = "2026-10-18T16:30:00Z"
+httpx2 = "2026-10-18T16:30:00Z"
+starlette = "2026-10-18T15:51:00Z"
