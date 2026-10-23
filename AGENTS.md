@@ -2,6 +2,8 @@
 
 ## Sadr
 
+Sadr: off. The owner keeps this repo out of Sadr's runs.
+
 ### Build and test
 - The repo has no tests. Run `uv sync --locked` and then `uv run python -c "import main"`. Both pass when the lockfile matches pyproject.toml and the app loads. The import needs no network and no API key.
 
