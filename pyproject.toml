@@ -12,3 +12,18 @@ dependencies = [
     "twilio>=9.12.0",
     "uvicorn>=0.54.0",
 ]
+
+[tool.uv]
+exclude-newer = "7 days"
+
+[tool.uv.exclude-newer-package]
+# cooldown exception for GHSA-6q48-6c7w-9gw2; remove after 2026-10-27T02:25Z. Sadr is off here, so lift this cap by hand.
+certifi = "2026-10-20T02:25:00Z"
+# already merged inside the cooldown; remove after 2026-10-26T12:27Z. Sadr is off here, so lift this cap by hand.
+fastapi = "2026-10-19T12:27:00Z"
+# already merged inside the cooldown; remove after 2026-10-25T16:30Z. Sadr is off here, so lift this cap by hand.
+httpcore2 = "2026-10-18T16:30:00Z"
+# already merged inside the cooldown; remove after 2026-10-25T16:30Z. Sadr is off here, so lift this cap by hand.
+httpx2 = "2026-10-18T16:30:00Z"
+# already merged inside the cooldown; remove after 2026-10-25T15:51Z. Sadr is off here, so lift this cap by hand.
+starlette = "2026-10-18T15:51:00Z"
